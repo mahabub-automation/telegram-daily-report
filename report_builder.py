@@ -59,7 +59,7 @@ def build_report(dataframe):
 
     lines.append("-------------------------------")
 
-    if config.SHOW_COMPARISON and len(yesterday_data) > 0:
+    if config.SHOW_COMPARISON and len(yesterday_data) > 0 and total_orders > 0:
         yesterday_sales = yesterday_data[config.COLUMN_AMOUNT].sum()
         difference = total_sales - yesterday_sales
         percent = (difference / yesterday_sales * 100) if yesterday_sales else 0
